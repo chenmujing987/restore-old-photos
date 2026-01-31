@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Restore Old Photos - Best AI Old Photo Restoration App | FotoRevive</title>
+    <meta name="description" content="Looking to restore old photos? FotoRevive is the ultimate AI old photo restoration app. Fix scratches, unblur faces, and colorize memories instantly. Download for iOS.">
+    <meta name="keywords" content="restore old photos, old photo restoration app, fix old photos app, picture restoration, AI photo restorer, colorize old photos">
+    <meta name="author" content="FotoRevive Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ⚠️ Canonical Tag (防止重复收录，请替换为你的真实域名，如 https://restoreoldphotos.cc/) -->
+    <link rel="canonical" href="https://your-domain-name.com/" />
+
+    <!-- Open Graph Tags (社交分享卡片优化) -->
+    <meta property="og:title" content="FotoRevive - Bring Your Old Photos Back to Life">
+    <meta property="og:description" content="Turn blurry, scratched, and B&W photos into HD masterpieces instantly with AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain-name.com/">
+    <meta property="og:image" content="https://your-domain-name.com/images/social-preview.jpg"> <!-- ⚠️ 必须做一张 1200x630 的预览图 -->
+    <meta property="og:site_name" content="FotoRevive">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FotoRevive - AI Old Photo Restoration">
+    <meta name="twitter:description" content="Fix scratches, colorize, and animate old photos in seconds.">
+    <meta name="twitter:image" content="https://your-domain-name.com/images/social-preview.jpg">
+
+    <!-- Favicon (浏览器标签页图标) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "FotoRevive",
+          "operatingSystem": "iOS",
+          "applicationCategory": "PhotoVideoApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
+          },
+          "description": "AI-powered app to restore, colorize, and animate old photos."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Best Way to Restore Old Photos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best way to restore old photos is to use AI-powered software like FotoRevive. It ensures the physical photo is preserved while the digital version is enhanced to remove scratches and restore color."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Fade Black and White Photos be Restored?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Our AI is specifically trained to recognize and reconstruct faded details in black and white photos, bringing back contrast and sharpness."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --gradient-start: #faa032;
+            --gradient-end: #fd4760;
+            --primary-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            --dark-bg: #1C1C1E;
+            --light-bg: #FFF9F9;
+            --text-color: #1D1D1F;
+            --text-light: #6e6e73;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(253, 71, 96, 0.25);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(253, 71, 96, 0.4);
+        }
+        
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+
+        /* --- HERO 区域 --- */
+        #hero {
+            padding: 140px 0 100px; /* 调整Padding，避免使用display:flex在父级 */
+            background: radial-gradient(circle at 70% 30%, #fff5f0 0%, #ffffff 70%);
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .hero-text-content {
+            flex: 1;
+            max-width: 550px;
+            z-index: 2;
+        }
+
+        .hero-visual-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        /* --- 滑块组件 (通用) --- */
+        .comparison-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            border: 6px solid #fff;
+            width: 100%;
+            max-width: 500px;
+            user-select: none;
+        }
+
+        .comparison-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 125%; /* 4:5 */
+            background: #eee;
+        }
+
+        .comparison-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .img-modified {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0; bottom: 0; left: 50%;
+            width: 3px;
+            background: #fff;
+            z-index: 10;
+            pointer-events: none;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+        }
+
+        .slider-circle {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px; height: 48px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: var(--gradient-end);
+            font-size: 1.2rem;
+        }
+
+        .slider-input {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; cursor: col-resize; z-index: 20;
+        }
+        
+        .label-badge {
+            position: absolute; top: 20px;
+            background: rgba(0,0,0,0.6); color: #fff;
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 0.85rem; font-weight: 600;
+            z-index: 5; backdrop-filter: blur(4px);
+        }
+        .label-before { left: 20px; }
+        .label-after { right: 20px; z-index: 6;}
+
+        /* --- 特性板块 --- */
+        .feature-section { padding: 100px 0; }
+        .feature-row { display: flex; align-items: center; gap: 80px; }
+        .feature-row.reverse { flex-direction: row-reverse; }
+        .feature-text { flex: 1; }
+        .feature-visual { flex: 1; display: flex; justify-content: center; }
+        
+        .feature-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
+        .feature-desc { font-size: 1.2rem; color: var(--text-light); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 20px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- 底部 Grid --- */
+        .grid-section {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;
+        }
+        .grid-card {
+            background: var(--light-bg); padding: 50px; border-radius: 30px; text-align: center;
+            transition: transform 0.3s;
+        }
+        .grid-card:hover { transform: translateY(-5px); }
+
+        /* Footer */
+        footer { background: var(--dark-bg); color: #fff; padding: 80px 0 40px; text-align: center; }
+        .footer-links a { color: #aaa; text-decoration: none; margin: 0 20px; transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+
+        /* --- Memories Grid --- */
+        .memories-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;
+        }
+        .memory-card {
+            background: #fff; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .memory-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        
+        .video-container {
+            position: relative; width: 100%; padding-bottom: 140%; background: #f5f5f5; overflow: hidden;
+        }
+        .memory-video {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+        }
+        .video-thumbnail {
+            position: absolute; top: 20px; left: 20px; width: 80px; height: 100px;
+            border-radius: 12px; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            object-fit: cover; z-index: 2;
+        }
+        .video-label {
+            position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.6); color: #fff;
+            padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+            z-index: 2; backdrop-filter: blur(4px);
+        }
+        
+        .memory-info { padding: 30px; text-align: left; }
+        .memory-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; color: var(--text-color); }
+        .memory-location { font-size: 0.95rem; color: var(--text-light); margin-bottom: 15px; }
+        .memory-quote { font-size: 1rem; line-height: 1.6; color: #333; font-style: italic; margin-bottom: 20px; }
+        
+        .memory-btn {
+            display: inline-block; background: var(--primary-gradient); color: #fff;
+            padding: 10px 24px; border-radius: 25px; text-decoration: none;
+            font-weight: 600; font-size: 0.95rem; transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(253, 71, 96, 0.25);
+        }
+        .memory-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(253, 71, 96, 0.35); }
+
+        /* --- How It Works --- */
+        .how-it-works-section { padding: 100px 0; text-align: center; background: #fff; }
+        .steps-container { display: flex; justify-content: space-between; gap: 40px; margin-top: 60px; }
+        .step-item { flex: 1; text-align: center; }
+        .step-number { 
+            width: 50px; height: 50px; background: var(--primary-gradient); color: #fff; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            font-size: 1.2rem; font-weight: 700; margin: 0 auto 24px; 
+        }
+        .step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+        .step-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
+
+        /* --- Why Choose --- */
+        .why-choose-section { background: #F5F9FF; padding: 100px 0; text-align: center; }
+        .reasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+        .reason-item { padding: 20px; }
+        .reason-icon-circle { 
+            width: 80px; height: 80px; margin: 0 auto 24px;
+            background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: #FD4760; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .reason-title { font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; }
+        .reason-desc { color: var(--text-light); font-size: 0.9rem; }
+
+        /* --- Features Grid --- */
+        .features-grid-section { padding: 100px 0; text-align: center; }
+        .features-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; text-align: left; }
+        .feature-card-new {
+            background: #fff; padding: 40px; border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee;
+        }
+        .feature-card-new:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-icon-box {
+            width: 50px; height: 50px; background: var(--primary-gradient); color: #fff;
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; margin-bottom: 24px;
+        }
+        .feature-card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+
+        /* --- FAQ --- */
+        .faq-section { background: #1C1C1E; color: #fff; padding: 100px 0; text-align: center; }
+        .faq-container { max-width: 800px; margin: 60px auto 0; text-align: left; }
+        .faq-item { border-bottom: 1px solid #333; }
+        .faq-question { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 500; font-size: 1.1rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+        .faq-answer p { padding-bottom: 24px; }
+        .faq-toggle { transition: transform 0.3s; color: #666; }
+        .faq-item.active .faq-toggle { transform: rotate(180deg); color: #fff; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
+            #hero { padding: 100px 0 60px; }
+            .hero-layout { flex-direction: column; text-align: center; gap: 50px; }
+            .hero-text-content { margin: 0 auto; }
+            h1 { font-size: 2.8rem; }
+            .hero-sub { margin-left: auto; margin-right: auto; }
+            
+            .feature-row, .feature-row.reverse { flex-direction: column; gap: 50px; text-align: center; }
+            .memories-grid { grid-template-columns: 1fr; gap: 30px; }
+            .steps-container { flex-direction: column; gap: 40px; }
+            .reasons-grid { grid-template-columns: 1fr; }
+            .features-grid-3 { grid-template-columns: 1fr; }
+            .comparison-wrapper { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo gradient-text">FotoRevive</div>
+                <a href="#" class="btn" style="padding: 10px 24px; font-size: 0.9rem;">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO: 优化了 H1 关键词 -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-layout">
+                <!-- 左侧：文字 -->
+                <div class="hero-text-content">
+                    <h1>Restore Old Photos<br>to <span class="gradient-text">HD Clarity</span></h1>
+                    <p class="hero-sub">Don't let your memories fade. Use the most advanced <strong>old photo restoration app</strong> to repair scratches, colorize black & white images, and unblur faces instantly.</p>
+                    
+                    <a href="https://apps.apple.com/us/app/id6747912103" class="btn">
+                        <i class="fa-brands fa-apple" style="font-size: 1.2rem;"></i>
+                        <span>Download on the App Store</span>
+                    </a>
+                </div>
+
+                <!-- 右侧：演示滑块 -->
+                <div class="hero-visual-content">
+                    <div class="comparison-wrapper">
+                        <div class="comparison-container">
+                            <span class="label-badge label-before">Original</span>
+                            <span class="label-badge label-after">Restored</span>
+                            <!-- ⚠️ SEO优化：添加具体的 alt 描述 -->
+                            <img src="images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image">
+                            <img src="images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified">
+                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
+                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 1 -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h2 class="feature-title">The #1 Old Photo Restoration App</h2>
+                    <p class="feature-desc">Turn blurry, pixelated, or damaged photos into high-definition masterpieces. Our AI reconstructs details that were lost over time.</p>
+                </div>
+                <div class="feature-visual">
+                    <div class="comparison-wrapper">
+                        <div class="comparison-container">
+                            <span class="label-badge label-before">Blurry</span>
+                            <span class="label-badge label-after">Sharp</span>
+                            <!-- ⚠️ SEO优化：Alt -->
+                            <img src="images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image">
+                            <img src="images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified">
+                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
+                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE 2 -->
+    <section class="feature-section" style="background-color: #fcfcfc;">
+        <div class="container">
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h2 class="feature-title">Colorize B&W Photos</h2>
+                    <p class="feature-desc">Automatically add realistic colors to black and white photos. Perfect for vintage family portraits and historical images.</p>
+                </div>
+                <div class="feature-visual">
+                    <div class="comparison-wrapper">
+                        <div class="comparison-container">
+                            <span class="label-badge label-before">B&W</span>
+                            <span class="label-badge label-after">Color</span>
+                            <!-- ⚠️ SEO优化：Alt -->
+                            <img src="images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image">
+                            <img src="images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified">
+                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
+                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bring Your Memories to Life -->
+    <section class="feature-section" style="background: linear-gradient(180deg, #fcfcfc 0%, #fef9f5 100%); padding: 120px 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 80px;">Bring Your Memories to Life</h2>
+            <div class="memories-grid">
+                <!-- 优化了文案（使用方案A） -->
+                <div class="memory-card">
+                    <div class="video-container">
+                        <span class="video-label">Original</span>
+                        <video class="memory-video" loop muted playsinline poster="images/video1-thumb.jpg">
+                            <source src="images/video1.mp4" type="video/mp4">
+                        </video>
+                        <img src="images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation">
+                    </div>
+                    <div class="memory-info">
+                        <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="memory-name">Margaret H.</h4>
+                        <p class="memory-location">London, UK</p>
+                        <p class="memory-quote">"I haven't seen her smile in 20 years. Watching her face animate brought tears to my eyes—it felt like she was right here with me again."</p>
+                        <a href="https://apps.apple.com/us/app/id6747912103" class="memory-btn">Animate Photo</a>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="video-container">
+                        <span class="video-label">Original</span>
+                        <video class="memory-video" loop muted playsinline poster="images/video2-thumb.jpg">
+                            <source src="images/video2.mp4" type="video/mp4">
+                        </video>
+                        <img src="images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait">
+                    </div>
+                    <div class="memory-info">
+                        <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="memory-name">Robert S.</h4>
+                        <p class="memory-location">Boston, MA</p>
+                        <p class="memory-quote">"My great-grandparents were just a static image on the wall. The app brought them to life, bridging a 100-year gap. It’s like finally meeting them."</p>
+                        <a href="https://apps.apple.com/us/app/id6747912103" class="memory-btn">Bring to Life</a>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="video-container">
+                        <span class="video-label">Original</span>
+                        <video class="memory-video" loop muted playsinline poster="images/video3-thumb.jpg">
+                            <source src="images/video3.mp4" type="video/mp4">
+                        </video>
+                        <img src="images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo">
+                    </div>
+                    <div class="memory-info">
+                        <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <h4 class="memory-name">Sarah P.</h4>
+                        <p class="memory-location">Sydney, Australia</p>
+                        <p class="memory-quote">"The ultimate anniversary gift. My parents were speechless seeing their wedding day restored in HD motion. The best tears of joy we've ever shared."</p>
+                        <a href="https://apps.apple.com/us/app/id6747912103" class="memory-btn">Try It Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">How to Restore Old Photos in 3 Steps</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 20px;">Learn the easiest way on <strong>how to restore old photos</strong> instantly using AI.</p>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Upload Photo</h3>
+                    <p class="step-desc">Upload your old, damaged, or faded photo to the app.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">AI Restoration</h3>
+                    <p class="step-desc">Our advanced AI analyzes and automatically restores your photo, fixing scratches and enhancing details.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Save & Share</h3>
+                    <p class="step-desc">Download your beautifully restored photo in high resolution, ready to print or share.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="why-choose-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 40px;">Why Choose Our AI Photo Restoration?</h2>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <div class="reason-icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="reason-title">Lightning Fast</h3>
+                    <p class="reason-desc">Get professional restoration results in seconds, not hours.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon-circle"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="reason-title">AI Powered</h3>
+                    <p class="reason-desc">Advanced machine learning algorithms trained on millions of photos.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon-circle"><i class="fa-regular fa-gem"></i></div>
+                    <h3 class="reason-title">High Quality</h3>
+                    <p class="reason-desc">Professional-grade restoration results that preserve original details.</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="reason-title">Privacy Protected</h3>
+                    <p class="reason-desc">Your photos are processed securely and are never used for training without permission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-grid-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">AI Photo Restoration Features</h2>
+            <p style="color: var(--text-light); max-width: 700px; margin: 0 auto;">We specialize in bringing your old, damaged photos back to their original beauty using cutting-edge technology.</p>
+            <div class="features-grid-3">
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3 class="feature-card-title">Crack & Tear Repair</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Seamlessly repair cracks, tears, and physical damage.</p>
+                </div>
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-palette"></i></div>
+                    <h3 class="feature-card-title">Color Restoration</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Restore faded colors and bring vibrancy back to your old photographs.</p>
+                </div>
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h3 class="feature-card-title">Missing Parts Reconstruction</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Reconstruct missing parts of your photos using AI generative technology.</p>
+                </div>
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-circle-half-stroke"></i></div>
+                    <h3 class="feature-card-title">Contrast Enhancement</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Improve the contrast and clarity of your photos.</p>
+                </div>
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-eraser"></i></div>
+                    <h3 class="feature-card-title">Stain & Spot Removal</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Remove unwanted stains, spots, and blemishes.</p>
+                </div>
+                <div class="feature-card-new">
+                    <div class="feature-icon-box"><i class="fa-solid fa-expand"></i></div>
+                    <h3 class="feature-card-title">Resolution Enhancement</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Increase the resolution and quality for better printing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ: 重点优化 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">Frequently Asked Questions</h2>
+            <p style="color: #888;">Common questions about our old photo restoration app</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>1. What is the best old photo restoration app?</span>
+                        <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FotoRevive is the top-rated <strong>old photo restoration app</strong> for iOS. It combines AI scratch removal, colorization, and face animation into one simple tool.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>2. How do I restore old photos on my phone?</span>
+                        <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply download the FotoRevive app. Upload your image, and our AI will automatically <strong>restore old photos</strong> by repairing damage, improving resolution, and adding color in seconds.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>3. Can I colorize black and white photos?</span>
+                        <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our app specializes in colorizing B&W photos. The AI analyzes the scene and applies realistic colors to skin, clothes, and backgrounds.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>4. Is FotoRevive free to download?</span>
+                        <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, FotoRevive is free to download on the App Store. We offer free restoration features as well as premium options for high-resolution exports.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>5. How to restore old photos using AI?</span>
+                        <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Restoring old photos used to require Photoshop skills, but now you can do it automatically. Here is <strong>how to restore old photos</strong> with FotoRevive:</p>
+                        <ol style="margin-left: 20px; color: #aaa; margin-top: 10px; margin-bottom: 20px;">
+                            <li style="margin-bottom: 5px;">Download the FotoRevive app.</li>
+                            <li style="margin-bottom: 5px;">Scan or upload your damaged photo.</li>
+                            <li style="margin-bottom: 5px;">Tap "Enhance", "Descratch", or "Colorize" depending on your needs.</li>
+                            <li style="margin-bottom: 5px;">Our AI will instantly repair scratches, unblur faces, or add color.</li>
+                            <li>Save the restored photo to your camera roll.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo gradient-text" style="margin-bottom:20px;">FotoRevive</div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="mailto:fotorevive.feedback@gmail.com">Contact Support</a>
+            </div>
+            <p style="color: #555; margin-top: 30px; font-size: 0.9rem;">© 2026 FotoRevive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Slider Logic
+            const sliders = document.querySelectorAll('.comparison-wrapper');
+            sliders.forEach(wrapper => {
+                const input = wrapper.querySelector('.slider-input');
+                const topImage = wrapper.querySelector('.img-modified');
+                const handle = wrapper.querySelector('.slider-handle');
+
+                const updateSlider = (value) => {
+                    topImage.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
+                    handle.style.left = `${value}%`;
+                };
+
+                input.addEventListener('input', (e) => updateSlider(e.target.value));
+                updateSlider(50);
+            });
+
+            // Video Hover Logic
+            const memoryCards = document.querySelectorAll('.memory-card');
+            memoryCards.forEach(card => {
+                const video = card.querySelector('.memory-video');
+                
+                card.addEventListener('mouseenter', () => {
+                    if (video && video.readyState >= 2) {
+                        video.play().catch(e => console.log("Auto-play prevented"));
+                    }
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    if (video) {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                });
+            });
+
+            // FAQ Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
