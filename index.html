@@ -96,16 +96,43 @@
             --text-light: #6e6e73;
             --white: #ffffff;
             --max-width: 1200px;
+            
+            /* Light Mode Colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #fcfcfc;
+            --bg-tertiary: #FFF9F9;
+            --bg-hero: radial-gradient(circle at 70% 30%, #fff5f0 0%, #ffffff 70%);
+            --text-primary: #1D1D1F;
+            --text-secondary: #6e6e73;
+            --border-color: rgba(0,0,0,0.05);
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.1);
+            --header-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode Colors */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1a1a1a;
+            --bg-hero: radial-gradient(circle at 70% 30%, #1a1a1a 0%, #0a0a0a 70%);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: rgba(255,255,255,0.1);
+            --card-bg: #1a1a1a;
+            --card-shadow: rgba(0,0,0,0.5);
+            --header-bg: rgba(20, 20, 20, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-color);
+            color: var(--text-primary);
             line-height: 1.6;
-            background-color: var(--white);
+            background-color: var(--bg-primary);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -145,20 +172,78 @@
             padding: 20px 0;
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--header-bg);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.3s ease;
         }
         nav { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
         .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+        
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            position: relative;
+            width: 60px;
+            height: 32px;
+            background: var(--bg-tertiary);
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--gradient-end);
+        }
+        
+        .theme-toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        [data-theme="dark"] .theme-toggle-slider {
+            transform: translateX(28px);
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
         /* --- HERO 区域 --- */
         #hero {
             padding: 140px 0 100px; /* 调整Padding，避免使用display:flex在父级 */
-            background: radial-gradient(circle at 70% 30%, #fff5f0 0%, #ffffff 70%);
+            background: var(--bg-hero);
             overflow: hidden;
             width: 100%;
+            transition: background 0.3s ease;
         }
         
         .hero-layout {
@@ -189,13 +274,27 @@
             line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -0.03em;
+            color: var(--text-primary);
+        }
+        
+        h2, h3, h4 {
+            color: var(--text-primary);
         }
 
         .hero-sub {
             font-size: 1.25rem;
-            color: var(--text-light);
+            color: var(--text-secondary);
             margin-bottom: 40px;
             max-width: 90%;
+        }
+        
+        /* General text color adjustments */
+        p {
+            color: var(--text-secondary);
+        }
+        
+        strong {
+            color: var(--text-primary);
         }
 
         /* --- 滑块组件 (通用) --- */
@@ -267,14 +366,19 @@
         .label-after { right: 20px; z-index: 6;}
 
         /* --- 特性板块 --- */
-        .feature-section { padding: 100px 0; }
+        .feature-section { padding: 100px 0; transition: background 0.3s ease; }
+        .feature-section-alt { background: var(--bg-secondary); }
+        .memories-section { 
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); 
+            padding: 120px 0; 
+        }
         .feature-row { display: flex; align-items: center; gap: 80px; }
         .feature-row.reverse { flex-direction: row-reverse; }
         .feature-text { flex: 1; }
         .feature-visual { flex: 1; display: flex; justify-content: center; }
         
-        .feature-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
-        .feature-desc { font-size: 1.2rem; color: var(--text-light); }
+        .feature-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; color: var(--text-primary); }
+        .feature-desc { font-size: 1.2rem; color: var(--text-secondary); }
         .feature-icon { font-size: 2.5rem; margin-bottom: 20px; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* --- 底部 Grid --- */
@@ -282,26 +386,33 @@
             display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;
         }
         .grid-card {
-            background: var(--light-bg); padding: 50px; border-radius: 30px; text-align: center;
-            transition: transform 0.3s;
+            background: var(--card-bg); padding: 50px; border-radius: 30px; text-align: center;
+            transition: transform 0.3s, background 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         .grid-card:hover { transform: translateY(-5px); }
 
         /* Footer */
-        footer { background: var(--dark-bg); color: #fff; padding: 80px 0 40px; text-align: center; }
+        footer { background: var(--dark-bg); color: #fff; padding: 80px 0 40px; text-align: center; transition: background 0.3s ease; }
         .footer-links a { color: #aaa; text-decoration: none; margin: 0 20px; transition: color 0.3s; }
         .footer-links a:hover { color: #fff; }
+        
+        [data-theme="dark"] footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
 
         /* --- Memories Grid --- */
         .memories-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;
         }
         .memory-card {
-            background: #fff; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--card-bg); border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
+            border: 1px solid var(--border-color);
         }
-        .memory-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .memory-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px var(--card-shadow); }
         
         .video-container {
             position: relative; width: 100%; padding-bottom: 140%; background: #f5f5f5; overflow: hidden;
@@ -321,9 +432,9 @@
         }
         
         .memory-info { padding: 30px; text-align: left; }
-        .memory-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; color: var(--text-color); }
-        .memory-location { font-size: 0.95rem; color: var(--text-light); margin-bottom: 15px; }
-        .memory-quote { font-size: 1rem; line-height: 1.6; color: #333; font-style: italic; margin-bottom: 20px; }
+        .memory-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; color: var(--text-primary); }
+        .memory-location { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 15px; }
+        .memory-quote { font-size: 1rem; line-height: 1.6; color: var(--text-secondary); font-style: italic; margin-bottom: 20px; }
         
         .memory-btn {
             display: inline-block; background: var(--primary-gradient); color: #fff;
@@ -334,7 +445,7 @@
         .memory-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(253, 71, 96, 0.35); }
 
         /* --- How It Works --- */
-        .how-it-works-section { padding: 100px 0; text-align: center; background: #fff; }
+        .how-it-works-section { padding: 100px 0; text-align: center; background: var(--bg-secondary); transition: background 0.3s ease; }
         .steps-container { display: flex; justify-content: space-between; gap: 40px; margin-top: 60px; }
         .step-item { flex: 1; text-align: center; }
         .step-number { 
@@ -342,46 +453,52 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center; 
             font-size: 1.2rem; font-weight: 700; margin: 0 auto 24px; 
         }
-        .step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
-        .step-desc { color: var(--text-light); font-size: 0.95rem; line-height: 1.5; }
+        .step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+        .step-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
 
         /* --- Why Choose --- */
-        .why-choose-section { background: #F5F9FF; padding: 100px 0; text-align: center; }
+        .why-choose-section { background: var(--bg-tertiary); padding: 100px 0; text-align: center; transition: background 0.3s ease; }
         .reasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
         .reason-item { padding: 20px; }
         .reason-icon-circle { 
             width: 80px; height: 80px; margin: 0 auto 24px;
-            background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; color: #FD4760; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            background: var(--card-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: #FD4760; box-shadow: 0 10px 25px var(--card-shadow);
+            transition: background 0.3s ease;
         }
-        .reason-title { font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; }
-        .reason-desc { color: var(--text-light); font-size: 0.9rem; }
+        .reason-title { font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: var(--text-primary); }
+        .reason-desc { color: var(--text-secondary); font-size: 0.9rem; }
 
         /* --- Features Grid --- */
         .features-grid-section { padding: 100px 0; text-align: center; }
         .features-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; text-align: left; }
         .feature-card-new {
-            background: #fff; padding: 40px; border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee;
+            background: var(--card-bg); padding: 40px; border-radius: 16px;
+            box-shadow: 0 5px 20px var(--card-shadow); transition: transform 0.3s, background 0.3s ease; border: 1px solid var(--border-color);
         }
-        .feature-card-new:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-card-new:hover { transform: translateY(-5px); box-shadow: 0 10px 30px var(--card-shadow); }
         .feature-icon-box {
             width: 50px; height: 50px; background: var(--primary-gradient); color: #fff;
             border-radius: 10px; display: flex; align-items: center; justify-content: center;
             font-size: 1.2rem; margin-bottom: 24px;
         }
-        .feature-card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .feature-card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
+        .feature-card-desc { color: var(--text-secondary); font-size: 0.95rem; }
 
         /* --- FAQ --- */
-        .faq-section { background: #1C1C1E; color: #fff; padding: 100px 0; text-align: center; }
+        .faq-section { background: var(--dark-bg); color: #fff; padding: 100px 0; text-align: center; }
         .faq-container { max-width: 800px; margin: 60px auto 0; text-align: left; }
-        .faq-item { border-bottom: 1px solid #333; }
+        .faq-item { border-bottom: 1px solid var(--border-color); }
         .faq-question { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 500; font-size: 1.1rem; }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: #aaa; font-size: 0.95rem; line-height: 1.6; }
         .faq-answer p { padding-bottom: 24px; }
         .faq-toggle { transition: transform 0.3s; color: #666; }
         .faq-item.active .faq-toggle { transform: rotate(180deg); color: #fff; }
         .faq-item.active .faq-answer { max-height: 300px; }
+        
+        [data-theme="dark"] .faq-section {
+            background: var(--bg-secondary);
+        }
 
         /* Mobile Adjustments */
         @media (max-width: 968px) {
@@ -397,6 +514,38 @@
             .reasons-grid { grid-template-columns: 1fr; }
             .features-grid-3 { grid-template-columns: 1fr; }
             .comparison-wrapper { max-width: 100%; }
+            
+            .nav-actions {
+                gap: 8px;
+            }
+            
+            .logo-container {
+                gap: 8px;
+            }
+            
+            .logo-image {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .theme-toggle {
+                width: 50px;
+                height: 28px;
+            }
+            
+            .theme-toggle-slider {
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+            }
+            
+            [data-theme="dark"] .theme-toggle-slider {
+                transform: translateX(22px);
+            }
         }
     </style>
 </head>
@@ -405,8 +554,18 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo gradient-text">FotoRevive</div>
-                <a href="#" class="btn" style="padding: 10px 24px; font-size: 0.9rem;">Download</a>
+                <div class="logo-container">
+                    <img src="images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
+                    <div class="logo gradient-text">FotoRevive</div>
+                </div>
+                <div class="nav-actions">
+                    <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider">
+                            <i class="fa-solid fa-sun" id="themeIcon"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="btn" style="padding: 10px 24px; font-size: 0.9rem;">Download</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -471,7 +630,7 @@
     </section>
 
     <!-- FEATURE 2 -->
-    <section class="feature-section" style="background-color: #fcfcfc;">
+    <section class="feature-section feature-section-alt">
         <div class="container">
             <div class="feature-row reverse">
                 <div class="feature-text">
@@ -497,7 +656,7 @@
     </section>
 
     <!-- Bring Your Memories to Life -->
-    <section class="feature-section" style="background: linear-gradient(180deg, #fcfcfc 0%, #fef9f5 100%); padding: 120px 0;">
+    <section class="feature-section memories-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 80px;">Bring Your Memories to Life</h2>
             <div class="memories-grid">
@@ -739,6 +898,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Dark Mode Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+            
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    themeIcon.className = 'fa-solid fa-moon';
+                } else {
+                    themeIcon.className = 'fa-solid fa-sun';
+                }
+            }
+            
             // Slider Logic
             const sliders = document.querySelectorAll('.comparison-wrapper');
             sliders.forEach(wrapper => {
