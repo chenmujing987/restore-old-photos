@@ -393,13 +393,60 @@
         .grid-card:hover { transform: translateY(-5px); }
 
         /* Footer */
-        footer { background: var(--dark-bg); color: #fff; padding: 80px 0 40px; text-align: center; transition: background 0.3s ease; }
-        .footer-links a { color: #aaa; text-decoration: none; margin: 0 20px; transition: color 0.3s; }
+        footer { 
+            background: var(--dark-bg); 
+            color: #fff; 
+            padding: 60px 0; 
+            text-align: center; 
+            transition: background 0.3s ease; 
+        }
+        
+        .footer-description {
+            color: #bbb;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .footer-description strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .footer-copyright {
+            color: #888;
+            font-size: 0.8rem;
+        }
+        
+        footer .gradient-text { 
+            background: var(--primary-gradient); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        
+        .footer-links a { 
+            color: #aaa; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            transition: color 0.3s; 
+        }
         .footer-links a:hover { color: #fff; }
         
         [data-theme="dark"] footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
+        }
+        
+        [data-theme="dark"] .footer-description {
+            color: #999;
+        }
+        
+        [data-theme="dark"] .footer-description strong {
+            color: #ddd;
+        }
+        
+        [data-theme="dark"] .footer-copyright {
+            color: #666;
         }
 
         /* --- Memories Grid --- */
@@ -872,7 +919,7 @@
         </div>
     </section>
 
-    <footer style="background-color: #1C1C1E; color: #fff; padding: 60px 0; text-align: center;">
+    <footer>
         <div class="container">
             <!-- 1. 品牌名保持不变 -->
             <div class="logo gradient-text" style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">
@@ -881,18 +928,18 @@
             
             <!-- 2. ✅ 新增：包含关键词的一句话描述 -->
             <!-- 关键词：Old Photo Restoration App, Restore Old Photos -->
-            <p style="color: #666; font-size: 0.9rem; max-width: 600px; margin: 0 auto 30px;">
+            <p class="footer-description">
                 The best AI <strong>old photo restoration app</strong> to <strong>restore old photos</strong>, colorize B&W images, and animate your memories instantly.
             </p>
 
             <!-- 3. 链接保持不变 -->
             <div class="footer-links" style="margin-bottom: 30px;">
-                <a href="privacy.html" style="color: #aaa; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
-                <a href="terms.html" style="color: #aaa; text-decoration: none; margin: 0 15px;">Terms of Use</a>
-                <a href="mailto:fotorevive.feedback@gmail.com" style="color: #aaa; text-decoration: none; margin: 0 15px;">Contact Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="mailto:fotorevive.feedback@gmail.com">Contact Support</a>
             </div>
 
-            <p style="color: #444; font-size: 0.8rem;">© 2026 FotoRevive. All rights reserved.</p>
+            <p class="footer-copyright">© 2026 FotoRevive. All rights reserved.</p>
         </div>
     </footer>
 
