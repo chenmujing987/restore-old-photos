@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- SEO Meta Tags -->
     <title>Restore Old Photos - Best AI Old Photo Restoration App | FotoRevive</title>
@@ -37,6 +38,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/hero-before.jpg">
+    <link rel="preload" as="image" href="images/hero-after.jpg">
+    <link rel="preload" as="image" href="images/FotoRevive.png">
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -313,7 +319,12 @@
             position: relative;
             width: 100%;
             padding-bottom: 125%; /* 4:5 */
-            background: #eee;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            overflow: hidden;
+        }
+        
+        [data-theme="dark"] .comparison-container {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
         }
 
         .comparison-image {
@@ -321,10 +332,19 @@
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
             pointer-events: none;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .img-modified {
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
+        }
+        
+        /* Prevent image download on long press (mobile) */
+        img {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .slider-handle {
@@ -461,11 +481,63 @@
         }
         .memory-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px var(--card-shadow); }
         
+        /* Mobile: Add active state for touch feedback */
+        @media (max-width: 968px) {
+            .memory-card:active {
+                transform: scale(0.98);
+            }
+            
+            .video-container::after {
+                opacity: 1;
+            }
+        }
+        
         .video-container {
             position: relative; width: 100%; padding-bottom: 140%; background: #f5f5f5; overflow: hidden;
+            cursor: pointer;
         }
+        
+        .video-container::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #FD4760;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 10;
+            line-height: 60px;
+            text-align: center;
+            padding-left: 4px;
+        }
+        
+        .video-container:hover::after {
+            opacity: 1;
+        }
+        
+        /* Mobile: Always show play button */
+        @media (max-width: 968px) {
+            .video-container::after {
+                opacity: 0.7;
+            }
+        }
+        
         .memory-video {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+        }
+        
+        .memory-video.playing + .video-thumbnail {
+            opacity: 0;
         }
         .video-thumbnail {
             position: absolute; top: 20px; left: 20px; width: 80px; height: 100px;
@@ -579,6 +651,14 @@
                 font-size: 1.4rem;
             }
             
+            .video-container::after {
+                opacity: 0.8;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                line-height: 50px;
+            }
+            
             .theme-toggle {
                 width: 50px;
                 height: 28px;
@@ -639,8 +719,8 @@
                             <span class="label-badge label-before">Original</span>
                             <span class="label-badge label-after">Restored</span>
                             <!-- ⚠️ SEO优化：添加具体的 alt 描述 -->
-                            <img src="images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image">
-                            <img src="images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified">
+                            <img src="images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
+                            <img src="images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
                         </div>
@@ -665,8 +745,8 @@
                             <span class="label-badge label-before">Blurry</span>
                             <span class="label-badge label-after">Sharp</span>
                             <!-- ⚠️ SEO优化：Alt -->
-                            <img src="images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image">
-                            <img src="images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified">
+                            <img src="images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
+                            <img src="images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
                         </div>
@@ -691,8 +771,8 @@
                             <span class="label-badge label-before">B&W</span>
                             <span class="label-badge label-after">Color</span>
                             <!-- ⚠️ SEO优化：Alt -->
-                            <img src="images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image">
-                            <img src="images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified">
+                            <img src="images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
+                            <img src="images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
                         </div>
@@ -711,10 +791,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline poster="images/video1-thumb.jpg">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video1-thumb.jpg" webkit-playsinline="true">
                             <source src="images/video1.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation">
+                        <img src="images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -728,10 +808,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline poster="images/video2-thumb.jpg">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video2-thumb.jpg" webkit-playsinline="true">
                             <source src="images/video2.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait">
+                        <img src="images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -745,10 +825,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline poster="images/video3-thumb.jpg">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video3-thumb.jpg" webkit-playsinline="true">
                             <source src="images/video3.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo">
+                        <img src="images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -985,17 +1065,51 @@
                 };
 
                 input.addEventListener('input', (e) => updateSlider(e.target.value));
+                
+                // Touch support for mobile
+                let isDragging = false;
+                wrapper.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                });
+                
+                wrapper.addEventListener('touchmove', (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                        const rect = wrapper.getBoundingClientRect();
+                        const x = e.touches[0].clientX - rect.left;
+                        const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+                        input.value = percentage;
+                        updateSlider(percentage);
+                    }
+                });
+                
+                wrapper.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+                
                 updateSlider(50);
             });
 
-            // Video Hover Logic
+            // Image Error Handling
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    console.warn('Failed to load image:', this.src);
+                    // Optionally add a placeholder or retry logic
+                    this.style.opacity = '0.5';
+                });
+            });
+
+            // Video Hover Logic (Desktop) & Click Logic (Mobile)
             const memoryCards = document.querySelectorAll('.memory-card');
             memoryCards.forEach(card => {
                 const video = card.querySelector('.memory-video');
+                let isPlaying = false;
                 
+                // Desktop: Hover to play
                 card.addEventListener('mouseenter', () => {
                     if (video && video.readyState >= 2) {
                         video.play().catch(e => console.log("Auto-play prevented"));
+                        isPlaying = true;
                     }
                 });
                 
@@ -1003,8 +1117,36 @@
                     if (video) {
                         video.pause();
                         video.currentTime = 0;
+                        isPlaying = false;
                     }
                 });
+                
+                // Mobile: Click/Touch to play
+                card.addEventListener('click', (e) => {
+                    if (video) {
+                        if (isPlaying) {
+                            video.pause();
+                            video.currentTime = 0;
+                            isPlaying = false;
+                        } else {
+                            video.play().catch(e => {
+                                console.log("Video play failed:", e);
+                                // Fallback: try to load and play again
+                                video.load();
+                                setTimeout(() => video.play(), 100);
+                            });
+                            isPlaying = true;
+                        }
+                    }
+                });
+                
+                // Handle video end
+                if (video) {
+                    video.addEventListener('ended', () => {
+                        video.currentTime = 0;
+                        isPlaying = false;
+                    });
+                }
             });
 
             // FAQ Logic
