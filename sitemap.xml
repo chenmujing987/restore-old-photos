@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <!-- 英文主站 -->
    <url>
       <loc>https://restoreoldphotos.cc/</loc>
       <lastmod>2026-02-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-   <!-- 西班牙语 -->
    <url>
       <loc>https://restoreoldphotos.cc/es/</loc>
       <lastmod>2026-02-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
-   <!-- 意大利语 -->
    <url>
       <loc>https://restoreoldphotos.cc/it/</loc>
       <lastmod>2026-02-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
-   <!-- 葡萄牙语 -->
    <url>
       <loc>https://restoreoldphotos.cc/pt/</loc>
       <lastmod>2026-02-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
-   <!-- 德语 -->
    <url>
       <loc>https://restoreoldphotos.cc/de/</loc>
       <lastmod>2026-02-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
 </urlset>
