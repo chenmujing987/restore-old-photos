@@ -38,8 +38,8 @@
     <meta name="twitter:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
 
     <!-- Favicon (浏览器标签页图标) -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="/images/hero-before.jpg">
-    <link rel="preload" as="image" href="/images/hero-after.jpg">
-    <link rel="preload" as="image" href="/images/FotoRevive.png">
+    <link rel="preload" as="image" href="../images/hero-before.jpg">
+    <link rel="preload" as="image" href="../images/hero-after.jpg">
+    <link rel="preload" as="image" href="../images/FotoRevive.png">
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -404,7 +404,7 @@
         }
 
         .img-modified {
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
+            -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
         }
         
         /* Prevent image download on long press (mobile) */
@@ -588,6 +588,7 @@
             padding-left: 4px;
         }
         
+        .video-container.is-playing::after { opacity: 0 !important; }
         .video-container:hover::after {
             opacity: 1;
         }
@@ -692,6 +693,7 @@
             .hero-layout { flex-direction: column; text-align: center; gap: 50px; }
             .hero-text-content { margin: 0 auto; }
             h1 { font-size: 2.8rem; }
+            .hero-visual-content, .feature-visual, .hero-text-content, .feature-text { width: 100%; flex: none; }
             .hero-sub { margin-left: auto; margin-right: auto; }
             
             .feature-row, .feature-row.reverse { flex-direction: column; gap: 50px; text-align: center; }
@@ -700,6 +702,7 @@
             .reasons-grid { grid-template-columns: 1fr; }
             .features-grid-3 { grid-template-columns: 1fr; }
             .comparison-wrapper { max-width: 100%; }
+            .comparison-wrapper { width: 100% !important; margin: 0 auto; box-sizing: border-box; }
             
             .nav-actions {
                 gap: 8px;
@@ -749,7 +752,7 @@
         <div class="container">
             <nav>
                 <div class="logo-container">
-                    <img src="/images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
+                    <img src="../images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
                     <div class="logo gradient-text">FotoRevive</div>
                 </div>
                 <div class="nav-actions">
@@ -797,8 +800,8 @@
                             <span class="label-badge label-before">Original</span>
                             <span class="label-badge label-after">Restored</span>
                             <!-- ⚠️ SEO优化：添加具体的 alt 描述 -->
-                            <img src="/images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
-                            <img src="/images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
+                            <img src="../images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
+                            <img src="../images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
                         </div>
@@ -823,8 +826,8 @@
                             <span class="label-badge label-before">Blurry</span>
                             <span class="label-badge label-after">Sharp</span>
                             <!-- ⚠️ SEO优化：Alt -->
-                            <img src="/images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
-                            <img src="/images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
+                            <img src="../images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
+                            <img src="../images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
                         </div>
@@ -849,8 +852,8 @@
                             <span class="label-badge label-before">B&W</span>
                             <span class="label-badge label-after">Color</span>
                             <!-- ⚠️ SEO优化：Alt -->
-                            <img src="/images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
-                            <img src="/images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
+                            <img src="../images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
+                            <img src="../images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
                             <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
                             <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
                         </div>
@@ -869,10 +872,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="/images/video1-thumb.jpg" webkit-playsinline="true">
-                            <source src="/images/video1.mp4" type="video/mp4">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video1-thumb.jpg" webkit-playsinline="true">
+                            <source src="../images/video1.mp4" type="video/mp4">
                         </video>
-                        <img src="/images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation" loading="lazy">
+                        <img src="../images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -886,10 +889,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="/images/video2-thumb.jpg" webkit-playsinline="true">
-                            <source src="/images/video2.mp4" type="video/mp4">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video2-thumb.jpg" webkit-playsinline="true">
+                            <source src="../images/video2.mp4" type="video/mp4">
                         </video>
-                        <img src="/images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait" loading="lazy">
+                        <img src="../images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -903,10 +906,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="/images/video3-thumb.jpg" webkit-playsinline="true">
-                            <source src="/images/video3.mp4" type="video/mp4">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video3-thumb.jpg" webkit-playsinline="true">
+                            <source src="../images/video3.mp4" type="video/mp4">
                         </video>
-                        <img src="/images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo" loading="lazy">
+                        <img src="../images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -1138,7 +1141,7 @@
                 const handle = wrapper.querySelector('.slider-handle');
 
                 const updateSlider = (value) => {
-                    topImage.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
+                    topImage.style.webkitClipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`; topImage.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
                     handle.style.left = `${value}%`;
                 };
 
@@ -1181,13 +1184,13 @@
             const memoryCards = document.querySelectorAll('.memory-card');
             memoryCards.forEach(card => {
                 const video = card.querySelector('.memory-video');
-                let isPlaying = false;
+                let isPlaying = false; video.parentElement.classList.remove("is-playing");
                 
                 // Desktop: Hover to play
                 card.addEventListener('mouseenter', () => {
                     if (video && video.readyState >= 2) {
                         video.play().catch(e => console.log("Auto-play prevented"));
-                        isPlaying = true;
+                        isPlaying = true; video.parentElement.classList.add("is-playing");
                     }
                 });
                 
@@ -1195,7 +1198,7 @@
                     if (video) {
                         video.pause();
                         video.currentTime = 0;
-                        isPlaying = false;
+                        isPlaying = false; video.parentElement.classList.remove("is-playing");
                     }
                 });
                 
@@ -1205,7 +1208,7 @@
                         if (isPlaying) {
                             video.pause();
                             video.currentTime = 0;
-                            isPlaying = false;
+                            isPlaying = false; video.parentElement.classList.remove("is-playing");
                         } else {
                             video.play().catch(e => {
                                 console.log("Video play failed:", e);
@@ -1213,7 +1216,7 @@
                                 video.load();
                                 setTimeout(() => video.play(), 100);
                             });
-                            isPlaying = true;
+                            isPlaying = true; video.parentElement.classList.add("is-playing");
                         }
                     }
                 });
@@ -1222,7 +1225,7 @@
                 if (video) {
                     video.addEventListener('ended', () => {
                         video.currentTime = 0;
-                        isPlaying = false;
+                        isPlaying = false; video.parentElement.classList.remove("is-playing");
                     });
                 }
             });
