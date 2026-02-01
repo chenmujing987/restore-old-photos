@@ -404,7 +404,7 @@
         }
 
         .img-modified {
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
+            -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); 
         }
         
         /* Prevent image download on long press (mobile) */
@@ -588,6 +588,7 @@
             padding-left: 4px;
         }
         
+        .video-container.is-playing::after { opacity: 0 !important; }
         .video-container:hover::after {
             opacity: 1;
         }
@@ -692,6 +693,7 @@
             .hero-layout { flex-direction: column; text-align: center; gap: 50px; }
             .hero-text-content { margin: 0 auto; }
             h1 { font-size: 2.8rem; }
+            .hero-visual-content, .feature-visual, .hero-text-content, .feature-text { width: 100%; flex: none; }
             .hero-sub { margin-left: auto; margin-right: auto; }
             
             .feature-row, .feature-row.reverse { flex-direction: column; gap: 50px; text-align: center; }
@@ -1138,7 +1140,7 @@
                 const handle = wrapper.querySelector('.slider-handle');
 
                 const updateSlider = (value) => {
-                    topImage.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
+                    topImage.style.webkitClipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`; topImage.style.clipPath = `polygon(${value}% 0, 100% 0, 100% 100%, ${value}% 100%)`;
                     handle.style.left = `${value}%`;
                 };
 
@@ -1181,13 +1183,13 @@
             const memoryCards = document.querySelectorAll('.memory-card');
             memoryCards.forEach(card => {
                 const video = card.querySelector('.memory-video');
-                let isPlaying = false;
+                let isPlaying = false; video.parentElement.classList.remove("is-playing");
                 
                 // Desktop: Hover to play
                 card.addEventListener('mouseenter', () => {
                     if (video && video.readyState >= 2) {
                         video.play().catch(e => console.log("Auto-play prevented"));
-                        isPlaying = true;
+                        isPlaying = true; video.parentElement.classList.add("is-playing");
                     }
                 });
                 
@@ -1195,7 +1197,7 @@
                     if (video) {
                         video.pause();
                         video.currentTime = 0;
-                        isPlaying = false;
+                        isPlaying = false; video.parentElement.classList.remove("is-playing");
                     }
                 });
                 
@@ -1205,7 +1207,7 @@
                         if (isPlaying) {
                             video.pause();
                             video.currentTime = 0;
-                            isPlaying = false;
+                            isPlaying = false; video.parentElement.classList.remove("is-playing");
                         } else {
                             video.play().catch(e => {
                                 console.log("Video play failed:", e);
@@ -1213,7 +1215,7 @@
                                 video.load();
                                 setTimeout(() => video.play(), 100);
                             });
-                            isPlaying = true;
+                            isPlaying = true; video.parentElement.classList.add("is-playing");
                         }
                     }
                 });
@@ -1222,7 +1224,7 @@
                 if (video) {
                     video.addEventListener('ended', () => {
                         video.currentTime = 0;
-                        isPlaying = false;
+                        isPlaying = false; video.parentElement.classList.remove("is-playing");
                     });
                 }
             });
