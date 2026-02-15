@@ -48,8 +48,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="images/hero-before.jpg">
-    <link rel="preload" as="image" href="images/hero-after.jpg">
+    <link rel="preload" as="image" href="images/damaged-family-photo-scratched-bw.jpg">
+    <link rel="preload" as="image" href="images/restored-family-photo-colorized-hd.jpg">
     <link rel="preload" as="image" href="images/FotoRevive.png">
 
     <!-- Schema.org Structured Data (JSON-LD) -->
@@ -452,6 +452,23 @@
         .label-before { left: 20px; }
         .label-after { right: 20px; z-index: 6;}
 
+        /* Comparison Figure & Caption */
+        .comparison-figure {
+            margin: 0;
+            max-width: 500px;
+            width: 100%;
+        }
+        .comparison-caption {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: left;
+        }
+        .comparison-caption strong {
+            color: var(--text-primary);
+        }
+
         /* --- 特性板块 --- */
         .feature-section { padding: 100px 0; transition: background 0.3s ease; }
         .feature-section-alt { background: var(--bg-secondary); }
@@ -702,6 +719,7 @@
             .reasons-grid { grid-template-columns: 1fr; }
             .features-grid-3 { grid-template-columns: 1fr; }
             .comparison-wrapper { max-width: 100%; }
+            .comparison-wrapper { width: 100% !important; margin: 0 auto; box-sizing: border-box; }
             
             .nav-actions {
                 gap: 8px;
@@ -794,17 +812,21 @@
 
                 <!-- 右侧：演示滑块 -->
                 <div class="hero-visual-content">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">Original</span>
-                            <span class="label-badge label-after">Restored</span>
-                            <!-- ⚠️ SEO优化：添加具体的 alt 描述 -->
-                            <img src="images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
-                            <img src="images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">Original</span>
+                                <span class="label-badge label-after">Restored</span>
+                                <img src="images/damaged-family-photo-scratched-bw.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
+                                <img src="images/restored-family-photo-colorized-hd.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>Old Photo Restoration:</strong> This 1950s family portrait had severe scratches, yellowing, and fading. Our AI removed all scratches, restored facial details, and applied natural colorization to bring the memory back to life.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -820,17 +842,21 @@
                     <p class="feature-desc">Turn blurry, pixelated, or damaged photos into high-definition masterpieces. Our AI reconstructs details that were lost over time.</p>
                 </div>
                 <div class="feature-visual">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">Blurry</span>
-                            <span class="label-badge label-after">Sharp</span>
-                            <!-- ⚠️ SEO优化：Alt -->
-                            <img src="images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
-                            <img src="images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">Blurry</span>
+                                <span class="label-badge label-after">Sharp</span>
+                                <img src="images/blurry-portrait-face-before-ai.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
+                                <img src="images/sharpened-portrait-face-hd-quality.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>AI Photo Enhancement:</strong> The original portrait suffered from motion blur and low resolution. AI enhancement restored sharp facial features, recovered fine details, and increased resolution to 4x the original quality.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -846,17 +872,21 @@
                     <p class="feature-desc">Automatically add realistic colors to black and white photos. Perfect for vintage family portraits and historical images.</p>
                 </div>
                 <div class="feature-visual">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">B&W</span>
-                            <span class="label-badge label-after">Color</span>
-                            <!-- ⚠️ SEO优化：Alt -->
-                            <img src="images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
-                            <img src="images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">B&W</span>
+                                <span class="label-badge label-after">Color</span>
+                                <img src="images/vintage-wedding-photo-black-white.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
+                                <img src="images/ai-colorized-wedding-photo-natural.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>B&W Photo Colorization:</strong> This black and white wedding photo from the 1940s was given realistic AI colorization — natural skin tones, dress fabric textures, and background foliage were all intelligently colored while preserving original details.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -871,10 +901,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video1-thumb.jpg" webkit-playsinline="true">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/ai-photo-animation-grandmother-demo.jpg" webkit-playsinline="true">
                             <source src="images/video1.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation" loading="lazy">
+                        <img src="images/ai-photo-animation-grandmother-demo.jpg" class="video-thumbnail" alt="Vintage 1950s grandmother portrait brought to life with AI photo animation tool" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -888,10 +918,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video2-thumb.jpg" webkit-playsinline="true">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/ai-restored-great-grandparents-portrait.jpg" webkit-playsinline="true">
                             <source src="images/video2.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait" loading="lazy">
+                        <img src="images/ai-restored-great-grandparents-portrait.jpg" class="video-thumbnail" alt="Blurry portrait of great-grandparents restored to high definition using AI enhancer" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -905,10 +935,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/video3-thumb.jpg" webkit-playsinline="true">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="images/ai-colorized-wedding-anniversary-animation.jpg" webkit-playsinline="true">
                             <source src="images/video3.mp4" type="video/mp4">
                         </video>
-                        <img src="images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo" loading="lazy">
+                        <img src="images/ai-colorized-wedding-anniversary-animation.jpg" class="video-thumbnail" alt="Black and white wedding anniversary photo colorized and sharpened by AI" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
