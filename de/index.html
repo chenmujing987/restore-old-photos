@@ -24,17 +24,18 @@
     <link rel="alternate" hreflang="x-default" href="https://restoreoldphotos.cc/" />
 
     <!-- Open Graph Tags (社交分享卡片优化) -->
-    <meta property="og:title" content="FotoRevive - Bring Your Old Photos Back to Life">
-    <meta property="og:description" content="Turn blurry, scratched, and B&W photos into HD masterpieces instantly with AI.">
+    <meta property="og:title" content="FotoRevive - Erwecken Sie alte Fotos zum Leben">
+    <meta property="og:description" content="Verwandeln Sie unscharfe, zerkratzte Schwarz-Weiß-Fotos sofort in HD-Meisterwerke mit KI.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://restoreoldphotos.cc/">
-    <meta property="og:image" content="https://restoreoldphotos.cc/images/social-preview.jpg"> <!-- ⚠️ 必须做一张 1200x630 的预览图 -->
+    <meta property="og:url" content="https://www.restoreoldphotos.cc/de/">
+    <meta property="og:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
     <meta property="og:site_name" content="FotoRevive">
+    <meta property="og:locale" content="de_DE">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FotoRevive - AI Old Photo Restoration">
-    <meta name="twitter:description" content="Fix scratches, colorize, and animate old photos in seconds.">
+    <meta name="twitter:title" content="FotoRevive - KI Alte Fotos Restaurieren">
+    <meta name="twitter:description" content="Kratzer entfernen, kolorieren und alte Fotos in Sekunden animieren.">
     <meta name="twitter:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
 
     <!-- Favicon (浏览器标签页图标) -->
@@ -48,8 +49,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="../images/hero-before.jpg">
-    <link rel="preload" as="image" href="../images/hero-after.jpg">
+    <link rel="preload" as="image" href="../images/damaged-family-photo-scratched-bw.jpg">
+    <link rel="preload" as="image" href="../images/restored-family-photo-colorized-hd.jpg">
     <link rel="preload" as="image" href="../images/FotoRevive.png">
 
     <!-- Schema.org Structured Data (JSON-LD) -->
@@ -72,25 +73,25 @@
             "ratingValue": "4.8",
             "ratingCount": "1250"
           },
-          "description": "AI-powered app to restore, colorize, and animate old photos."
+          "description": "KI-gestützte App zum Restaurieren, Kolorieren und Animieren alter Fotos."
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What is the Best Way to Restore Old Photos?",
+              "name": "Was ist der beste Weg, alte Fotos zu restaurieren?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The best way to restore old photos is to use AI-powered software like FotoRevive. It ensures the physical photo is preserved while the digital version is enhanced to remove scratches and restore color."
+                "text": "Der beste Weg, alte Fotos zu restaurieren, ist die Verwendung von KI-gestützter Software wie FotoRevive. Sie stellt sicher, dass das physische Foto erhalten bleibt, während die digitale Version verbessert wird, um Kratzer zu entfernen und Farben wiederherzustellen."
               }
             },
             {
               "@type": "Question",
-              "name": "Can Fade Black and White Photos be Restored?",
+              "name": "Können verblasste Schwarz-Weiß-Fotos restauriert werden?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. Our AI is specifically trained to recognize and reconstruct faded details in black and white photos, bringing back contrast and sharpness."
+                "text": "Absolut. Unsere KI ist speziell darauf trainiert, verblasste Details in Schwarz-Weiß-Fotos zu erkennen und zu rekonstruieren und dabei Kontrast und Schärfe wiederherzustellen."
               }
             }
           ]
@@ -452,6 +453,23 @@
         .label-before { left: 20px; }
         .label-after { right: 20px; z-index: 6;}
 
+        /* Comparison Figure & Caption */
+        .comparison-figure {
+            margin: 0;
+            max-width: 500px;
+            width: 100%;
+        }
+        .comparison-caption {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: left;
+        }
+        .comparison-caption strong {
+            color: var(--text-primary);
+        }
+
         /* --- 特性板块 --- */
         .feature-section { padding: 100px 0; transition: background 0.3s ease; }
         .feature-section-alt { background: var(--bg-secondary); }
@@ -752,7 +770,7 @@
         <div class="container">
             <nav>
                 <div class="logo-container">
-                    <img src="../images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
+                    <img src="../images/FotoRevive.png" alt="FotoRevive Logo – App zur Restaurierung alter Fotos" class="logo-image">
                     <div class="logo gradient-text">FotoRevive</div>
                 </div>
                 <div class="nav-actions">
@@ -795,17 +813,21 @@
 
                 <!-- 右侧：演示滑块 -->
                 <div class="hero-visual-content">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">Original</span>
-                            <span class="label-badge label-after">Restored</span>
-                            <!-- ⚠️ SEO优化：添加具体的 alt 描述 -->
-                            <img src="../images/hero-before.jpg" alt="Old damaged black and white family photo before restoration" class="comparison-image" loading="eager">
-                            <img src="../images/hero-after.jpg" alt="Restored and colorized family photo in HD quality" class="comparison-image img-modified" loading="eager">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">Original</span>
+                                <span class="label-badge label-after">Restored</span>
+                                <img src="../images/damaged-family-photo-scratched-bw.jpg" alt="Altes beschädigtes Schwarz-Weiß-Familienfoto vor der Restaurierung" class="comparison-image" loading="eager">
+                                <img src="../images/restored-family-photo-colorized-hd.jpg" alt="Restauriertes und koloriertes Familienfoto in HD-Qualität" class="comparison-image img-modified" loading="eager">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-arrows-left-right"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Comparison slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>Fotorestaurierung:</strong> Dieses Familienporträt aus den 1950er Jahren wies schwere Kratzer, Vergilbung und Verblassung auf. Unsere KI hat alle Kratzer entfernt, Gesichtsdetails wiederhergestellt und eine natürliche Kolorierung angewendet.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -821,17 +843,22 @@
                     <p class="feature-desc">Verwandeln Sie unscharfe, verpixelte oder beschädigte Fotos in HD-Meisterwerke. Unsere KI rekonstruiert Details, die im Laufe der Zeit verloren gingen.</p>
                 </div>
                 <div class="feature-visual">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">Blurry</span>
-                            <span class="label-badge label-after">Sharp</span>
-                            <!-- ⚠️ SEO优化：Alt -->
-                            <img src="../images/enhance-before.jpg" alt="Blurry portrait photo before AI enhancement" class="comparison-image" loading="lazy">
-                            <img src="../images/enhance-after.jpg" alt="Sharpened HD portrait photo after AI enhancement" class="comparison-image img-modified" loading="lazy">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">Blurry</span>
+                                <span class="label-badge label-after">Sharp</span>
+                                <!-- ⚠️ SEO优化：Alt -->
+                                <img src="../images/enhance-before.jpg" alt="Unscharfes Porträtfoto vor der KI-Verbesserung" class="comparison-image" loading="lazy">
+                                <img src="../images/enhance-after.jpg" alt="Geschärftes HD-Porträtfoto nach KI-Verbesserung" class="comparison-image img-modified" loading="lazy">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-bolt"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Enhance slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>KI-Fotoverbesserung:</strong> Das Originalporträt litt unter Bewegungsunschärfe und niedriger Auflösung. Die KI-Verbesserung stellte scharfe Gesichtszüge wieder her und erhöhte die Auflösung auf das 4-fache der Originalqualität.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -847,17 +874,22 @@
                     <p class="feature-desc">Fügen Sie Schwarz-Weiß-Fotos automatisch realistische Farben hinzu. Perfekt für alte Familienporträts und historische Bilder.</p>
                 </div>
                 <div class="feature-visual">
-                    <div class="comparison-wrapper">
-                        <div class="comparison-container">
-                            <span class="label-badge label-before">B&W</span>
-                            <span class="label-badge label-after">Color</span>
-                            <!-- ⚠️ SEO优化：Alt -->
-                            <img src="../images/colorize-before.jpg" alt="Black and white photo of a wedding couple" class="comparison-image" loading="lazy">
-                            <img src="../images/colorize-after.jpg" alt="Colorized wedding photo with realistic skin tones" class="comparison-image img-modified" loading="lazy">
-                            <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
-                            <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
+                    <figure class="comparison-figure">
+                        <div class="comparison-wrapper">
+                            <div class="comparison-container">
+                                <span class="label-badge label-before">B&W</span>
+                                <span class="label-badge label-after">Color</span>
+                                <!-- ⚠️ SEO优化：Alt -->
+                                <img src="../images/colorize-before.jpg" alt="Schwarz-Weiß-Foto eines Hochzeitspaares vor der Kolorierung" class="comparison-image" loading="lazy">
+                                <img src="../images/ai-colorized-wedding-photo-natural.jpg" alt="Koloriertes Hochzeitsfoto mit realistischen Hauttönen durch KI" class="comparison-image img-modified" loading="lazy">
+                                <div class="slider-handle"><div class="slider-circle"><i class="fa-solid fa-paintbrush"></i></div></div>
+                                <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Colorize slider">
+                            </div>
                         </div>
-                    </div>
+                        <figcaption class="comparison-caption">
+                            <strong>Schwarz-Weiß Kolorierung:</strong> Dieses Schwarz-Weiß-Hochzeitsfoto aus den 1940er Jahren wurde mit realistischer KI-Kolorierung versehen — natürliche Hauttöne, Stofftexturen und Hintergrunddetails wurden intelligent eingefärbt.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -872,10 +904,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video1-thumb.jpg" webkit-playsinline="true">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/ai-photo-animation-grandmother-demo.jpg" webkit-playsinline="true">
                             <source src="../images/video1.mp4" type="video/mp4">
                         </video>
-                        <img src="../images/video1-thumb.jpg" class="video-thumbnail" alt="Grandmother photo before animation" loading="lazy">
+                        <img src="../images/ai-photo-animation-grandmother-demo.jpg" class="video-thumbnail" alt="Vintage-Porträt der Großmutter zum Leben erweckt mit KI-Fotoanimation" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -889,10 +921,10 @@
                 <div class="memory-card">
                     <div class="video-container">
                         <span class="video-label">Original</span>
-                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video2-thumb.jpg" webkit-playsinline="true">
+                        <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/ai-restored-great-grandparents-portrait.jpg" webkit-playsinline="true">
                             <source src="../images/video2.mp4" type="video/mp4">
                         </video>
-                        <img src="../images/video2-thumb.jpg" class="video-thumbnail" alt="Great-grandparents portrait" loading="lazy">
+                        <img src="../images/ai-restored-great-grandparents-portrait.jpg" class="video-thumbnail" alt="Unscharfes Urgroßeltern-Porträt in HD restauriert mit KI" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -909,7 +941,7 @@
                         <video class="memory-video" loop muted playsinline preload="metadata" poster="../images/video3-thumb.jpg" webkit-playsinline="true">
                             <source src="../images/video3.mp4" type="video/mp4">
                         </video>
-                        <img src="../images/video3-thumb.jpg" class="video-thumbnail" alt="Wedding anniversary photo" loading="lazy">
+                        <img src="../images/video3-thumb.jpg" class="video-thumbnail" alt="Schwarz-Weiß-Hochzeitsfoto koloriert und geschärft durch KI" loading="lazy">
                     </div>
                     <div class="memory-info">
                         <div style="margin-bottom:10px; color:#ffb400;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
