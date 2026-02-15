@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+    <title>About FotoRevive | AI Photo Restoration & Old Photo Repair</title>
+    <meta name="description" content="Learn how FotoRevive helps restore old photos using advanced AI technology. Repair damaged pictures, colorize black and white photos, and preserve precious memories.">
+    <meta name="keywords" content="AI photo restoration, restore old photos, photo restoration app, repair damaged photos, colorize black and white photos, old photo restoration, enhance old photos">
+    <meta name="author" content="FotoRevive Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.restoreoldphotos.cc/about.html" />
+
+    <meta property="og:title" content="About FotoRevive | AI Photo Restoration & Old Photo Repair">
+    <meta property="og:description" content="FotoRevive uses advanced AI to restore old photos, repair damaged pictures, and colorize black and white photos. Preserve your precious memories.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.restoreoldphotos.cc/about.html">
+    <meta property="og:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
+    <meta property="og:site_name" content="FotoRevive">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About FotoRevive – AI Photo Restoration for Old Photos">
+    <meta name="twitter:description" content="Repair damaged photos, colorize B&W images, and bring old memories back to life with AI.">
+    <meta name="twitter:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FotoRevive",
+      "url": "https://www.restoreoldphotos.cc",
+      "logo": "https://restoreoldphotos.cc/images/FotoRevive.png",
+      "description": "FotoRevive is an AI-powered photo restoration app designed to restore old photos, repair damaged pictures, and bring faded memories back to life.",
+      "sameAs": []
+    }
+    </script>
+
+    <style>
+        :root {
+            --gradient-start: #faa032;
+            --gradient-end: #fd4760;
+            --primary-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            --dark-bg: #1C1C1E;
+            --bg-primary: #ffffff;
+            --bg-secondary: #fcfcfc;
+            --bg-tertiary: #FFF9F9;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6e6e73;
+            --border-color: rgba(0,0,0,0.05);
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.1);
+            --header-bg: rgba(255, 255, 255, 0.9);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-tertiary: #1a1a1a;
+            --text-primary: #ffffff; --text-secondary: #a0a0a0;
+            --border-color: rgba(255,255,255,0.1); --card-bg: #1a1a1a;
+            --card-shadow: rgba(0,0,0,0.5); --header-bg: rgba(20, 20, 20, 0.9);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); line-height: 1.6; background: var(--bg-primary); transition: background .3s, color .3s; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Header */
+        header { padding: 20px 0; position: sticky; top: 0; background: var(--header-bg); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        header .container { max-width: 1200px; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-image { width: 40px; height: 40px; object-fit: contain; }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--primary-gradient); color: #fff; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 10px 20px rgba(253,71,96,0.25); }
+        .btn:hover { transform: translateY(-3px); }
+        .theme-toggle { position: relative; width: 60px; height: 32px; background: var(--bg-tertiary); border-radius: 50px; border: 2px solid var(--border-color); cursor: pointer; transition: all 0.3s; margin-right: 15px; }
+        .theme-toggle-slider { position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; background: var(--primary-gradient); border-radius: 50%; transition: transform 0.3s; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; }
+        [data-theme="dark"] .theme-toggle-slider { transform: translateX(28px); }
+
+        /* Hero */
+        .about-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .about-hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Content */
+        .about-content { padding-bottom: 80px; }
+        .about-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin: 56px 0 20px;
+            color: var(--text-primary);
+        }
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .about-content strong {
+            color: var(--text-primary);
+        }
+
+        /* Mission Block */
+        .mission-block {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--gradient-end);
+            border-radius: 0 16px 16px 0;
+            padding: 32px;
+            margin: 32px 0;
+            transition: background .3s;
+        }
+        .mission-block p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list .icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .feature-list .feature-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        /* Check List */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        .check-list li {
+            position: relative;
+            padding: 10px 0 10px 36px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .check-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .check-list li::after {
+            content: '✓';
+            position: absolute;
+            left: 5px;
+            top: 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 22px;
+        }
+
+        /* Tech Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .tech-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            transition: background .3s, transform .3s;
+        }
+        .tech-card:hover { transform: translateY(-4px); }
+        .tech-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+        .tech-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .tech-card p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+        /* Story Section */
+        .story-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 48px 40px;
+            margin: 48px 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: background .3s;
+        }
+        .story-section h2 { margin-top: 0; }
+        .story-section p { max-width: 580px; margin-left: auto; margin-right: auto; }
+        .story-quote {
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 24px;
+            margin-bottom: 0;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: var(--primary-gradient);
+            border-radius: 20px;
+            padding: 56px 40px;
+            text-align: center;
+            margin: 56px 0;
+            color: #fff;
+        }
+        .cta-box h2 { color: #fff; margin: 0 0 12px; font-size: 1.9rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 28px; font-size: 1.1rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #fff; color: #FD4760;
+            padding: 16px 36px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; font-size: 1rem;
+            transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .cta-btn:hover { transform: translateY(-3px); }
+
+        /* Before/After */
+        .about-comparison {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            border: 4px solid var(--border-color);
+        }
+        .about-comparison-inner { display: flex; }
+        .about-comparison-side { flex: 1; position: relative; }
+        .about-comparison-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .about-comparison-label {
+            position: absolute; top: 12px;
+            background: rgba(0,0,0,0.6); color: #fff;
+            padding: 4px 12px; border-radius: 16px;
+            font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(4px);
+        }
+        .about-comparison-side:first-child .about-comparison-label { left: 12px; }
+        .about-comparison-side:last-child .about-comparison-label { right: 12px; }
+        .about-comparison-divider { width: 3px; background: #fff; flex-shrink: 0; }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: #fff;
+            padding: 60px 0;
+            transition: background 0.3s;
+        }
+        footer .container { max-width: 1200px; }
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        .footer-brand {
+            flex: 1;
+            max-width: 300px;
+            text-align: left;
+        }
+        .footer-brand-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .footer-brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+        .footer-brand-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .footer-description {
+            color: #bbb;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .footer-description strong { color: #fff; font-weight: 600; }
+        .footer-columns {
+            display: flex;
+            gap: 80px;
+            text-align: left;
+        }
+        .footer-column h4 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+        .footer-column ul { list-style: none; padding: 0; margin: 0; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: #999; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-column ul li a:hover { color: #fff; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            margin-top: 10px;
+        }
+        .footer-copyright { color: #888; font-size: 0.8rem; }
+        .footer-legal a { color: #888; text-decoration: none; font-size: 0.8rem; transition: color 0.3s; }
+        .footer-legal a:hover { color: #fff; }
+        .footer-legal span { color: #555; margin: 0 8px; }
+        [data-theme="dark"] footer { background: var(--bg-secondary); border-top: 1px solid var(--border-color); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2rem; }
+            .about-hero .subtitle { font-size: 1.05rem; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .about-comparison-inner { flex-direction: column; }
+            .about-comparison-divider { width: 100%; height: 3px; }
+            .story-section { padding: 32px 24px; }
+            .cta-box { padding: 40px 24px; }
+            .cta-box h2 { font-size: 1.5rem; }
+            .footer-main { flex-direction: column; gap: 40px; }
+            .footer-brand { max-width: 100%; }
+            .footer-columns { gap: 50px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .logo { font-size: 1.4rem; }
+            .logo-image { width: 32px; height: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="./" class="logo-container">
+                    <img src="images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
+                    <div class="logo gradient-text">FotoRevive</div>
+                </a>
+                <div class="nav-actions">
+                    <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider">
+                            <i class="fa-solid fa-sun" id="themeIcon"></i>
+                        </div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6747912103" class="btn"><i class="fa-brands fa-apple"></i> Download App</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Hero / H1 -->
+            <section class="about-hero">
+                <h1>About FotoRevive – <span class="gradient-text">AI Photo Restoration</span> for Old Photos</h1>
+                <p class="subtitle">Restore old photos. Preserve precious memories. Bring faded history back to life with the power of artificial intelligence.</p>
+            </section>
+
+            <!-- Before/After Visual -->
+            <figure class="about-comparison">
+                <div class="about-comparison-inner">
+                    <div class="about-comparison-side">
+                        <span class="about-comparison-label">Before</span>
+                        <img src="images/damaged-family-photo-scratched-bw.jpg" alt="Damaged old family photo with scratches and fading before AI photo restoration" loading="eager">
+                    </div>
+                    <div class="about-comparison-divider"></div>
+                    <div class="about-comparison-side">
+                        <span class="about-comparison-label">After</span>
+                        <img src="images/restored-family-photo-colorized-hd.jpg" alt="AI restored and colorized family photo in HD quality after using FotoRevive" loading="eager">
+                    </div>
+                </div>
+            </figure>
+
+            <div class="about-content">
+
+                <!-- Section 1: Mission -->
+                <h2>Restore Old Photos. Preserve Precious Memories.</h2>
+                <p><strong>FotoRevive</strong> is an AI-powered <strong>photo restoration app</strong> designed to <strong>restore old photos</strong>, repair damaged pictures, and bring faded memories back to life.</p>
+                <p>Whether your photo is scratched, blurry, torn, or black and white, our advanced AI technology helps you restore photo quality in seconds — with natural results.</p>
+
+                <div class="mission-block">
+                    <p>We believe every old photograph holds a story worth preserving.</p>
+                </div>
+
+                <!-- Section 2: What We Do -->
+                <h2>What We Do</h2>
+                <p>FotoRevive specializes in making <strong>old photo restoration</strong> simple, fast, and accessible to everyone:</p>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div class="feature-text">
+                            <strong>Photo Restoration</strong>
+                            Repair damaged, faded, or torn photos with one-tap AI processing
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa-solid fa-palette"></i></div>
+                        <div class="feature-text">
+                            <strong>B&W Colorization</strong>
+                            Colorize black and white photos with natural, realistic tones
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa-solid fa-face-smile"></i></div>
+                        <div class="feature-text">
+                            <strong>Face Enhancement</strong>
+                            Enhance facial details in old portraits for sharper, clearer results
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa-solid fa-eraser"></i></div>
+                        <div class="feature-text">
+                            <strong>Scratch Removal</strong>
+                            Remove scratches and dust from scanned photos automatically
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa-solid fa-film"></i></div>
+                        <div class="feature-text">
+                            <strong>Photo Animation</strong>
+                            Bring photos to life with subtle AI motion and facial animation
+                        </div>
+                    </li>
+                </ul>
+
+                <p>Our <strong>AI photo restoration</strong> system is trained to recognize historical photo textures, lighting conditions, and aging patterns to deliver realistic results.</p>
+
+                <!-- Section 3: Why Choose Us -->
+                <h2>Why Choose FotoRevive?</h2>
+                <p>Unlike generic photo editing apps, FotoRevive is built specifically for <strong>restoring old photos</strong>.</p>
+
+                <ul class="check-list">
+                    <li>Designed for vintage and historical photographs</li>
+                    <li>Optimized for scanned prints and faded albums</li>
+                    <li>Natural AI colorization without artificial tones</li>
+                    <li>High-resolution output suitable for printing</li>
+                    <li>On-device processing — your photos stay private</li>
+                </ul>
+
+                <p>Our goal is not just to fix photos — but to <strong>preserve history</strong>.</p>
+
+                <!-- Section 4: Technology -->
+                <h2>Powered by Advanced AI Photo Restoration Technology</h2>
+                <p>FotoRevive uses deep learning models trained on thousands of restored images to deliver professional-quality results:</p>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="icon">🧠</div>
+                        <h4>Reconstruct Facial Details</h4>
+                        <p>AI rebuilds missing or blurred facial features from context clues</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="icon">📐</div>
+                        <h4>Improve Image Resolution</h4>
+                        <p>Upscale low-quality scans to print-ready HD resolution</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="icon">💡</div>
+                        <h4>Enhance Lighting & Contrast</h4>
+                        <p>Fix overexposure, underexposure, and faded tones automatically</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="icon">🎨</div>
+                        <h4>Restore Color in B&W Photos</h4>
+                        <p>Add natural, historically accurate color to black and white images</p>
+                    </div>
+                </div>
+
+                <p>All processing is optimized for mobile devices, ensuring fast and secure <strong>photo restoration</strong>.</p>
+
+                <!-- Before/After: Colorization -->
+                <figure class="about-comparison">
+                    <div class="about-comparison-inner">
+                        <div class="about-comparison-side">
+                            <span class="about-comparison-label">B&W Original</span>
+                            <img src="images/vintage-wedding-photo-black-white.jpg" alt="Original black and white vintage wedding photo before AI colorization" loading="lazy">
+                        </div>
+                        <div class="about-comparison-divider"></div>
+                        <div class="about-comparison-side">
+                            <span class="about-comparison-label">AI Colorized</span>
+                            <img src="images/ai-colorized-wedding-photo-natural.jpg" alt="AI colorized vintage wedding photo with natural tones by FotoRevive" loading="lazy">
+                        </div>
+                    </div>
+                </figure>
+
+                <!-- Section 5: Our Story -->
+                <div class="story-section">
+                    <h2>Our Story</h2>
+                    <p>FotoRevive was created with a simple mission: to help families preserve old memories.</p>
+                    <p>Many old photographs fade, tear, or lose color over time. We built FotoRevive to make <strong>restoring old photos</strong> simple, accessible, and affordable for everyone.</p>
+                    <p class="story-quote gradient-text">"Every restored photo is a story brought back to life."</p>
+                </div>
+
+                <!-- Section 6: CTA -->
+                <div class="cta-box">
+                    <h2>Start Restoring Your Old Photos Today</h2>
+                    <p>Download FotoRevive and experience the power of <strong>AI photo restoration</strong>.</p>
+                    <a href="https://apps.apple.com/us/app/id6747912103" class="cta-btn"><i class="fa-brands fa-apple" style="font-size:1.2rem"></i> Download on the App Store</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="images/FotoRevive.png" alt="FotoRevive App Icon" class="footer-brand-logo">
+                        <span class="footer-brand-name">FotoRevive</span>
+                    </div>
+                    <p class="footer-description">AI-powered <strong>photo restoration app</strong> to <strong>restore old photos</strong> and enhance your precious memories.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="photo-restoration.html">Photo Restoration</a></li>
+                            <li><a href="colorize-black-and-white-photos.html">B&W Colorization</a></li>
+                            <li><a href="scratch-removal.html">Scratch Removal</a></li>
+                            <li><a href="photo-animation.html">Photo Animation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog/">Blog</a></li>
+                            <li><a href="mailto:fotorevive.feedback@gmail.com">Support</a></li>
+                            <li><a href="mailto:fotorevive.feedback@gmail.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 FotoRevive. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms of Use</a>
+                    <span>|</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') themeIcon.className = 'fa-solid fa-moon';
+        themeToggle.addEventListener('click', function() {
+            const t = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+            themeIcon.className = t === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        });
+    </script>
+</body>
+</html>

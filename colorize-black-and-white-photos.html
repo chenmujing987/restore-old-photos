@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+    <title>Colorize Black and White Photos with AI | B&W Photo Colorization – FotoRevive</title>
+    <meta name="description" content="Colorize black and white photos instantly with AI. Turn old B&W portraits into vivid, natural-color images using FotoRevive's advanced photo colorization technology.">
+    <meta name="keywords" content="colorize black and white photos, AI photo colorization, colorize old photos, restore black and white photos, add color to old photos, vintage photo colorization, black and white photo to color">
+    <meta name="author" content="FotoRevive Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.restoreoldphotos.cc/colorize-black-and-white-photos.html" />
+
+    <meta property="og:title" content="Colorize Black and White Photos with AI – FotoRevive">
+    <meta property="og:description" content="Turn old B&W photos into vivid, natural-color images using AI colorization. Try FotoRevive free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.restoreoldphotos.cc/colorize-black-and-white-photos.html">
+    <meta property="og:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
+    <meta property="og:site_name" content="FotoRevive">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colorize Black and White Photos with AI – FotoRevive">
+    <meta name="twitter:description" content="AI colorization turns old B&W photos into vivid, realistic color images in seconds.">
+    <meta name="twitter:image" content="https://restoreoldphotos.cc/images/social-preview.jpg">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Colorize Black and White Photos with AI",
+      "description": "Colorize black and white photos instantly with AI photo colorization technology. Turn old B&W portraits into vivid, natural-color images.",
+      "url": "https://www.restoreoldphotos.cc/colorize-black-and-white-photos.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FotoRevive",
+        "logo": {"@type": "ImageObject", "url": "https://restoreoldphotos.cc/images/FotoRevive.png"}
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can AI colorize old black and white photos accurately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FotoRevive uses deep learning models trained on thousands of historical images to generate realistic and natural colors. The AI analyzes facial features, clothing textures, lighting conditions, and backgrounds to produce accurate, balanced colorization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is colorizing old photos safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FotoRevive processes all photos directly on your device using on-device AI. Your photos are never uploaded to cloud servers and are not shared publicly, ensuring complete privacy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I colorize very faded photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Even heavily faded black and white photos can be enhanced and colorized. FotoRevive first restores contrast and detail, then applies natural colorization — producing vivid results even from severely degraded originals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the colors look realistic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our AI is trained to produce balanced, natural skin tones and accurate environmental colors. Unlike simple color filters, FotoRevive understands the context of each photo element — skin, sky, fabric, foliage — and applies historically plausible colors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of black and white photos can be colorized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FotoRevive can colorize portraits, family photos, wedding pictures, landscapes, historical documents, and any other black and white or grayscale image. It works with scanned prints, digital copies, and photos taken directly with your phone camera."
+          }
+        }
+      ]
+    }]
+    </script>
+
+    <style>
+        :root {
+            --gradient-start: #faa032;
+            --gradient-end: #fd4760;
+            --primary-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            --dark-bg: #1C1C1E;
+            --bg-primary: #ffffff;
+            --bg-secondary: #fcfcfc;
+            --bg-tertiary: #FFF9F9;
+            --text-primary: #1D1D1F;
+            --text-secondary: #6e6e73;
+            --border-color: rgba(0,0,0,0.05);
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.1);
+            --header-bg: rgba(255, 255, 255, 0.9);
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-tertiary: #1a1a1a;
+            --text-primary: #ffffff; --text-secondary: #a0a0a0;
+            --border-color: rgba(255,255,255,0.1); --card-bg: #1a1a1a;
+            --card-shadow: rgba(0,0,0,0.5); --header-bg: rgba(20, 20, 20, 0.9);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-primary); line-height: 1.6; background: var(--bg-primary); transition: background .3s, color .3s; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        header { padding: 20px 0; position: sticky; top: 0; background: var(--header-bg); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        header .container { max-width: 1200px; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-image { width: 40px; height: 40px; object-fit: contain; }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--primary-gradient); color: #fff; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; box-shadow: 0 10px 20px rgba(253,71,96,0.25); }
+        .btn:hover { transform: translateY(-3px); }
+        .theme-toggle { position: relative; width: 60px; height: 32px; background: var(--bg-tertiary); border-radius: 50px; border: 2px solid var(--border-color); cursor: pointer; transition: all 0.3s; margin-right: 15px; }
+        .theme-toggle-slider { position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; background: var(--primary-gradient); border-radius: 50%; transition: transform 0.3s; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; }
+        [data-theme="dark"] .theme-toggle-slider { transform: translateX(28px); }
+
+        .page-hero { padding: 100px 0 40px; text-align: center; }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+        .page-hero .hero-lead { font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto 20px; line-height: 1.8; }
+        .page-hero .hero-detail { font-size: 1.02rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.8; }
+
+        .page-content { padding-bottom: 40px; }
+        .page-content h2 { font-size: 1.65rem; font-weight: 700; margin: 56px 0 18px; color: var(--text-primary); }
+        .page-content p { font-size: 1.05rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px; }
+        .page-content strong { color: var(--text-primary); }
+
+        .ba-figure { position: relative; border-radius: 16px; overflow: hidden; margin: 40px 0; box-shadow: 0 10px 30px var(--card-shadow); border: 4px solid var(--border-color); }
+        .ba-inner { display: flex; }
+        .ba-side { flex: 1; position: relative; }
+        .ba-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ba-label { position: absolute; top: 12px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(4px); }
+        .ba-side:first-child .ba-label { left: 12px; }
+        .ba-side:last-child .ba-label { right: 12px; }
+        .ba-divider { width: 3px; background: #fff; flex-shrink: 0; }
+        .ba-caption { padding: 12px 16px; font-size: 0.85rem; color: var(--text-secondary); background: var(--card-bg); text-align: center; }
+
+        .feature-bullets { list-style: none; padding: 0; margin: 24px 0; }
+        .feature-bullets li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-color); font-size: 1.02rem; color: var(--text-secondary); line-height: 1.6; }
+        .feature-bullets li:last-child { border-bottom: none; }
+        .feature-bullets .b-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: var(--primary-gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; }
+        .feature-bullets .b-text strong { display: block; color: var(--text-primary); font-weight: 700; margin-bottom: 2px; }
+
+        .check-list { list-style: none; padding: 0; margin: 24px 0; }
+        .check-list li { position: relative; padding: 12px 0 12px 40px; font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; border-bottom: 1px solid var(--border-color); }
+        .check-list li:last-child { border-bottom: none; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 15px; width: 24px; height: 24px; border-radius: 50%; background: var(--primary-gradient); }
+        .check-list li::after { content: '✓'; position: absolute; left: 6px; top: 15px; font-size: 0.78rem; font-weight: 700; color: #fff; line-height: 24px; }
+
+        .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+        .benefit-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; text-align: center; transition: background .3s, transform .3s; }
+        .benefit-card:hover { transform: translateY(-4px); }
+        .benefit-card .b-icon { font-size: 1.8rem; margin-bottom: 10px; }
+        .benefit-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .benefit-card p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        .benefit-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
+
+        .why-list { list-style: none; padding: 0; margin: 24px 0; }
+        .why-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border-color); font-size: 1.02rem; color: var(--text-secondary); line-height: 1.6; }
+        .why-list li:last-child { border-bottom: none; }
+        .why-list .w-icon { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; background: var(--primary-gradient); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; }
+        .why-list .w-text strong { display: block; color: var(--text-primary); font-weight: 700; margin-bottom: 2px; }
+
+        .internal-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; }
+        .internal-links a { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-tertiary); color: var(--gradient-end); padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid var(--border-color); transition: all .3s; }
+        .internal-links a:hover { background: var(--primary-gradient); color: #fff; border-color: transparent; transform: translateY(-2px); }
+
+        .faq-section { margin: 56px 0 40px; }
+        .faq-section h2 { margin-top: 0; }
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; margin: 12px 0; overflow: hidden; transition: background .3s; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; cursor: pointer; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: color .3s; user-select: none; }
+        .faq-question:hover { color: var(--gradient-end); }
+        .faq-question .faq-toggle { font-size: 1.2rem; transition: transform .3s; color: var(--text-secondary); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; }
+        .faq-answer-inner { padding: 0 24px 20px; font-size: 0.98rem; line-height: 1.8; color: var(--text-secondary); }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+
+        .cta-box { background: var(--primary-gradient); border-radius: 20px; padding: 56px 40px; text-align: center; margin: 48px 0 60px; color: #fff; }
+        .cta-box h2 { color: #fff; margin: 0 0 12px; font-size: 1.85rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 28px; font-size: 1.08rem; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #FD4760; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .cta-btn:hover { transform: translateY(-3px); }
+
+        footer { background: var(--dark-bg); color: #fff; padding: 60px 0; transition: background 0.3s; }
+        footer .container { max-width: 1200px; }
+        .footer-main { display: flex; justify-content: space-between; align-items: flex-start; gap: 60px; margin-bottom: 40px; }
+        .footer-brand { flex: 1; max-width: 300px; text-align: left; }
+        .footer-brand-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .footer-brand-logo { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; }
+        .footer-brand-name { font-size: 1.3rem; font-weight: 800; color: #fff; }
+        .footer-description { color: #bbb; font-size: 0.85rem; line-height: 1.6; margin: 0; }
+        .footer-description strong { color: #fff; font-weight: 600; }
+        .footer-columns { display: flex; gap: 80px; text-align: left; }
+        .footer-column h4 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+        .footer-column ul { list-style: none; padding: 0; margin: 0; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: #999; text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-column ul li a:hover { color: #fff; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; margin-top: 10px; }
+        .footer-copyright { color: #888; font-size: 0.8rem; }
+        .footer-legal a { color: #888; text-decoration: none; font-size: 0.8rem; transition: color 0.3s; }
+        .footer-legal a:hover { color: #fff; }
+        .footer-legal span { color: #555; margin: 0 8px; }
+        [data-theme="dark"] footer { background: var(--bg-secondary); border-top: 1px solid var(--border-color); }
+
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 2rem; }
+            .benefit-grid { grid-template-columns: 1fr; }
+            .benefit-card:last-child:nth-child(odd) { max-width: 100%; }
+            .ba-inner { flex-direction: column; }
+            .ba-divider { width: 100%; height: 3px; }
+            .internal-links { flex-direction: column; }
+            .internal-links a { justify-content: center; }
+            .cta-box { padding: 40px 24px; }
+            .cta-box h2 { font-size: 1.5rem; }
+            .footer-main { flex-direction: column; gap: 40px; }
+            .footer-brand { max-width: 100%; }
+            .footer-columns { gap: 50px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .logo { font-size: 1.4rem; }
+            .logo-image { width: 32px; height: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="./" class="logo-container">
+                    <img src="images/FotoRevive.png" alt="FotoRevive Logo" class="logo-image">
+                    <div class="logo gradient-text">FotoRevive</div>
+                </a>
+                <div class="nav-actions">
+                    <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider"><i class="fa-solid fa-sun" id="themeIcon"></i></div>
+                    </div>
+                    <a href="https://apps.apple.com/us/app/id6747912103" class="btn"><i class="fa-brands fa-apple"></i> Download App</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Hero -->
+            <section class="page-hero">
+                <h1>Colorize Black and White Photos <span class="gradient-text">with AI</span></h1>
+                <p class="hero-lead">Bring color back to your old memories.</p>
+                <p class="hero-detail"><strong>FotoRevive</strong> uses advanced <strong>AI colorization</strong> technology to <strong>colorize black and white photos</strong> naturally and realistically — in seconds.</p>
+                <p class="hero-detail">Restore faded portraits, historical photos, and vintage family pictures with lifelike tones and accurate colors.</p>
+            </section>
+
+            <!-- Hero Before/After -->
+            <figure class="ba-figure">
+                <div class="ba-inner">
+                    <div class="ba-side">
+                        <span class="ba-label">B&W Original</span>
+                        <img src="images/vintage-wedding-photo-black-white.jpg" alt="Original black and white vintage wedding photo before AI colorization" loading="eager">
+                    </div>
+                    <div class="ba-divider"></div>
+                    <div class="ba-side">
+                        <span class="ba-label">AI Colorized</span>
+                        <img src="images/ai-colorized-wedding-photo-natural.jpg" alt="AI colorized vintage wedding photo with natural realistic tones by FotoRevive" loading="eager">
+                    </div>
+                </div>
+                <div class="ba-caption">AI colorization transforms a black and white wedding portrait into a vivid, natural-color image in seconds</div>
+            </figure>
+
+            <div class="page-content">
+
+                <!-- What Is Photo Colorization -->
+                <h2>What Is Photo Colorization?</h2>
+                <p><strong>Photo colorization</strong> is the process of adding realistic color to black and white images.</p>
+                <p>Old photographs often lose their original color over time — or were captured in black and white decades ago. With AI-powered colorization, you can:</p>
+
+                <ul class="feature-bullets">
+                    <li>
+                        <div class="b-icon"><i class="fa-solid fa-palette"></i></div>
+                        <div class="b-text"><strong>Colorize old black and white photos</strong>Add natural, vivid colors to any grayscale image</div>
+                    </li>
+                    <li>
+                        <div class="b-icon"><i class="fa-solid fa-user"></i></div>
+                        <div class="b-text"><strong>Restore vintage portraits</strong>Bring life to old family photographs with accurate skin tones</div>
+                    </li>
+                    <li>
+                        <div class="b-icon"><i class="fa-solid fa-image"></i></div>
+                        <div class="b-text"><strong>Enhance historical family pictures</strong>Transform faded prints into vibrant digital keepsakes</div>
+                    </li>
+                    <li>
+                        <div class="b-icon"><i class="fa-solid fa-sparkles"></i></div>
+                        <div class="b-text"><strong>Bring depth and life to faded images</strong>AI adds color, contrast, and dimension to flat grayscale photos</div>
+                    </li>
+                </ul>
+
+                <p>FotoRevive's AI model analyzes facial features, clothing, lighting, and background details to apply natural, balanced colors.</p>
+
+                <!-- AI-Powered Colorization -->
+                <h2>AI-Powered Black & White Photo Colorization</h2>
+                <p>Unlike simple filters, FotoRevive does not just apply a color overlay. Our <strong>AI photo colorization</strong> system understands the content of your image:</p>
+
+                <ul class="check-list">
+                    <li>Detects <strong>skin tones</strong> accurately for natural-looking portraits</li>
+                    <li>Restores <strong>natural hair colors</strong> based on historical context</li>
+                    <li>Identifies <strong>sky, clothing, and backgrounds</strong> for realistic environmental color</li>
+                    <li>Preserves <strong>photo texture and details</strong> without artificial smoothing</li>
+                    <li>Maintains <strong>historical authenticity</strong> — colors that are era-appropriate</li>
+                </ul>
+
+                <p>The result is <strong>realistic, not artificial</strong>. Every colorized photo looks like it was originally shot in color.</p>
+
+                <!-- Before/After 2 -->
+                <figure class="ba-figure">
+                    <div class="ba-inner">
+                        <div class="ba-side">
+                            <span class="ba-label">Before</span>
+                            <img src="images/damaged-family-photo-scratched-bw.jpg" alt="Faded black and white family photo before AI colorization" loading="lazy">
+                        </div>
+                        <div class="ba-divider"></div>
+                        <div class="ba-side">
+                            <span class="ba-label">After</span>
+                            <img src="images/restored-family-photo-colorized-hd.jpg" alt="Colorized old family photo with natural tones after AI processing" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="ba-caption">From faded grayscale to rich, natural color — AI colorization brings this family portrait back to life</div>
+                </figure>
+
+                <!-- Why Colorize -->
+                <h2>Why Colorize Old Photos?</h2>
+                <p>Colorizing old photos isn't just about aesthetics. It transforms how we experience memories:</p>
+
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <div class="b-icon">👨‍👩‍👧‍👦</div>
+                        <h4>Preserve Family History</h4>
+                        <p>Color images feel more real and personal, connecting generations</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="b-icon">💓</div>
+                        <h4>Make Portraits Feel Alive</h4>
+                        <p>Color brings warmth and emotion that B&W can't capture</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="b-icon">👁️</div>
+                        <h4>Improve Visual Clarity</h4>
+                        <p>Color helps distinguish elements that look similar in grayscale</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="b-icon">😢</div>
+                        <h4>Enhance Emotional Impact</h4>
+                        <p>A colorized photo of a loved one hits differently than black and white</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="b-icon">🖨️</div>
+                        <h4>Ready for Printing</h4>
+                        <p>HD colorized output perfect for framing, gifting, and albums</p>
+                    </div>
+                </div>
+
+                <p>A colorized image can completely transform how a memory feels.</p>
+
+                <!-- Before/After 3 -->
+                <h2>Before & After Colorization</h2>
+                <p>Upload a black and white photo and watch it transform instantly. From faded grayscale to rich, natural color — all powered by AI.</p>
+
+                <figure class="ba-figure">
+                    <div class="ba-inner">
+                        <div class="ba-side">
+                            <span class="ba-label">Before</span>
+                            <img src="images/blurry-portrait-face-before-ai.jpg" alt="Old black and white portrait before colorize AI processing" loading="lazy">
+                        </div>
+                        <div class="ba-divider"></div>
+                        <div class="ba-side">
+                            <span class="ba-label">After</span>
+                            <img src="images/sharpened-portrait-face-hd-quality.jpg" alt="Colorized and enhanced portrait with natural tones after AI photo colorization" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="ba-caption">One tap to colorize: AI transforms this vintage portrait with natural skin tones and vivid detail</div>
+                </figure>
+
+                <!-- Why Choose FotoRevive -->
+                <h2>Why Choose FotoRevive for Photo Colorization?</h2>
+
+                <ul class="why-list">
+                    <li>
+                        <div class="w-icon"><i class="fa-solid fa-palette"></i></div>
+                        <div class="w-text"><strong>Designed for Old Photo Colorization</strong>Not a generic filter — built specifically for vintage and historical photographs</div>
+                    </li>
+                    <li>
+                        <div class="w-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="w-text"><strong>Advanced AI Color Detection</strong>Deep learning understands context: skin, sky, fabric, foliage, and more</div>
+                    </li>
+                    <li>
+                        <div class="w-icon"><i class="fa-solid fa-circle-half-stroke"></i></div>
+                        <div class="w-text"><strong>Natural and Balanced Tones</strong>Historically accurate colors that look authentic, not oversaturated</div>
+                    </li>
+                    <li>
+                        <div class="w-icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+                        <div class="w-text"><strong>High-Resolution Export</strong>Print-ready HD output for framing and photo albums</div>
+                    </li>
+                    <li>
+                        <div class="w-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div class="w-text"><strong>Easy Mobile Experience</strong>One-tap colorization — no editing skills or desktop computer needed</div>
+                    </li>
+                </ul>
+
+                <p>FotoRevive is more than a color filter — it's a full <strong>AI photo restoration app</strong>.</p>
+
+                <!-- Internal Links -->
+                <h2>Explore More Features</h2>
+                <div class="internal-links">
+                    <a href="photo-restoration.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Photo Restoration</a>
+                    <a href="scratch-removal.html"><i class="fa-solid fa-eraser"></i> Scratch Removal</a>
+                    <a href="photo-animation.html"><i class="fa-solid fa-film"></i> Photo Animation</a>
+                    <a href="blog/"><i class="fa-solid fa-newspaper"></i> Blog & Guides</a>
+                </div>
+
+                <!-- FAQ -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item active">
+                        <div class="faq-question"><span>Can AI colorize old black and white photos accurately?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Yes. FotoRevive uses deep learning models trained on thousands of historical images to generate realistic and natural colors. The AI analyzes facial features, clothing textures, lighting conditions, and backgrounds to produce accurate, balanced colorization.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Is colorizing old photos safe?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Yes. FotoRevive processes all photos directly on your device using on-device AI. Your photos are never uploaded to cloud servers and are not shared publicly, ensuring complete privacy.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Can I colorize very faded photos?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Yes. Even heavily faded black and white photos can be enhanced and colorized. FotoRevive first restores contrast and detail, then applies natural colorization — producing vivid results even from severely degraded originals.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Will the colors look realistic?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">Our AI is trained to produce balanced, natural skin tones and accurate environmental colors. Unlike simple color filters, FotoRevive understands the context of each photo element — skin, sky, fabric, foliage — and applies historically plausible colors.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>What types of black and white photos can be colorized?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><div class="faq-answer-inner">FotoRevive can colorize portraits, family photos, wedding pictures, landscapes, historical documents, and any other black and white or grayscale image. It works with scanned prints, digital copies, and photos taken directly with your phone camera.</div></div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-box">
+                    <h2>Start Colorizing Your Photos Today</h2>
+                    <p>Download FotoRevive and bring your old memories back to life with <strong>AI photo colorization</strong>.</p>
+                    <a href="https://apps.apple.com/us/app/id6747912103" class="cta-btn"><i class="fa-brands fa-apple" style="font-size:1.2rem"></i> Download on the App Store</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="images/FotoRevive.png" alt="FotoRevive App Icon" class="footer-brand-logo">
+                        <span class="footer-brand-name">FotoRevive</span>
+                    </div>
+                    <p class="footer-description">AI-powered <strong>photo restoration app</strong> to <strong>restore old photos</strong> and enhance your precious memories.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="photo-restoration.html">Photo Restoration</a></li>
+                            <li><a href="colorize-black-and-white-photos.html">B&W Colorization</a></li>
+                            <li><a href="scratch-removal.html">Scratch Removal</a></li>
+                            <li><a href="photo-animation.html">Photo Animation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog/">Blog</a></li>
+                            <li><a href="mailto:fotorevive.feedback@gmail.com">Support</a></li>
+                            <li><a href="mailto:fotorevive.feedback@gmail.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 FotoRevive. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms of Use</a>
+                    <span>|</span>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),html=document.documentElement,currentTheme=localStorage.getItem('theme')||'light';
+        html.setAttribute('data-theme',currentTheme);if(currentTheme==='dark')themeIcon.className='fa-solid fa-moon';
+        themeToggle.addEventListener('click',function(){const t=html.getAttribute('data-theme')==='light'?'dark':'light';html.setAttribute('data-theme',t);localStorage.setItem('theme',t);themeIcon.className=t==='dark'?'fa-solid fa-moon':'fa-solid fa-sun'});
+        document.querySelectorAll('.faq-question').forEach(function(q){q.addEventListener('click',function(){const item=this.parentElement,wasActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active')});if(!wasActive)item.classList.add('active')})});
+    </script>
+</body>
+</html>
